@@ -61,7 +61,7 @@ const Acil = () => {
                     setPhone(e.target.value)
                 }} placeholder="konum paylaşmak istediğin telefon numarasını gir" />
             </Stack>
-                    <a href="tel:112">asd</a>
+
             <Stack>
                 <Button variant="contained" onClick={() => {
                             window.location.href = `https://wa.me/+9${phone}/?text=https://www.google.com/maps/search/${coords.latitude},${coords.longitude}`;
@@ -79,7 +79,7 @@ const Acil = () => {
                     )
                 })}
             </Stack>
-                    <div>{transcript}</div>
+
         </Stack>
     ) : (
         <div>Getting the location data&hellip; </div>
