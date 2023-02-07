@@ -29,9 +29,12 @@ const Acil = () => {
     const helpFunction = useCallback(() => {
         keys.forEach(element => {
             if (transcript.toLocaleLowerCase().includes(element.toLocaleLowerCase())) {
-                window.open('tel:112');
+                window.location.href = `tel:112`
                 resetTranscript()
+            } else if (transcript.toLocaleLowerCase().includes("konum")) {
+                window.location.href = `https://wa.me/+9${phone}/?text=https://www.google.com/maps/search/${coords.latitude},${coords.longitude}`;
             }
+
         });
     }, [transcript])
 
@@ -51,14 +54,14 @@ const Acil = () => {
     ) : coords ? (
         <Stack gap="10px">
             <Stack>
-                <Typography variant="h3"> Eğer Yazı Yazamıyorsanız ACil Diye Bağırın</Typography>
+                        <Typography variant="h3">Konumumu Paylaş Diye Bağırın yada Acil Diye Bağırın</Typography>
             </Stack>
             <Stack>
                 <OutlinedInput type="number" value={phone} onChange={(e) => {
                     setPhone(e.target.value)
                 }} placeholder="konum paylaşmak istediğin telefon numarasını gir" />
             </Stack>
-
+                    <a href="tel:112">asd</a>
             <Stack>
                 <Button variant="contained" onClick={() => {
                     window.open(`https://wa.me/+9${phone}/?text=https://www.google.com/maps/search/${coords.latitude},${coords.longitude}`)
@@ -68,7 +71,8 @@ const Acil = () => {
                 {numbers.map((item, index) => {
                     return (
                         <Button variant="contained" key={index} onClick={() => {
-                            window.open(`tel:${item}`);
+                            window.location.href = `tel:${item}`
+
                         }}>
                             {item}
                         </Button>
