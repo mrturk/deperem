@@ -75,6 +75,7 @@ const Acil = () => {
                     )
                 })}
             </Stack>
+                    <div>{transcript}</div>
         </Stack>
     ) : (
         <div>Getting the location data&hellip; </div>
