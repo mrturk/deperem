@@ -64,7 +64,7 @@ const Acil = () => {
                     <a href="tel:112">asd</a>
             <Stack>
                 <Button variant="contained" onClick={() => {
-                    window.open(`https://wa.me/+9${phone}/?text=https://www.google.com/maps/search/${coords.latitude},${coords.longitude}`)
+                            window.location.href = `https://wa.me/+9${phone}/?text=https://www.google.com/maps/search/${coords.latitude},${coords.longitude}`;
                 }}>Konum Paylaş</Button>
             </Stack>
             <Stack gap="10px">
