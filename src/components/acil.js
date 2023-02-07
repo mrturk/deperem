@@ -67,7 +67,9 @@ const Acil = () => {
             <Stack gap="10px">
                 {numbers.map((item, index) => {
                     return (
-                        <Button variant="contained" key={index}>
+                        <Button variant="contained" key={index} onClick={() => {
+                            window.open(`tel:${item}`);
+                        }}>
                             {item}
                         </Button>
                     )
