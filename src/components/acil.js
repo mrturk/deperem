@@ -49,7 +49,8 @@ const Acil = () => {
             <Stack>
                 <Typography variant="h3"> Acil Diye Bağırın</Typography>
             </Stack>
-            <Stack>
+            {isGeolocationAvailable && <>
+                <Stack>
                 <OutlinedInput type="number" value={phone} onChange={(e) => {
                     setPhone(e.target.value)
                 }} placeholder="konum paylaşmak istediğin telefon numarasını gir" />
@@ -59,7 +60,8 @@ const Acil = () => {
                 <Button variant="contained" onClick={() => {
                             window.open(`https://wa.me/+9${phone}/?text=https://www.google.com/maps/search/${coords.latitude},${coords.longitude}`)
                 }}>Konum Paylaş</Button>
-            </Stack>
+                </Stack></>}
+
             <Stack gap="10px">
                 {numbers.map((item, index) => {
                     return (
