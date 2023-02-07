@@ -32,7 +32,7 @@ const Acil = () => {
                 window.location.href = `tel:112`
                 resetTranscript()
             } else if (transcript.toLocaleLowerCase().includes("konum")) {
-                window.location.href = `https://wa.me/+9${phone}/?text=https://www.google.com/maps/search/${coords.latitude},${coords.longitude}`;
+                window.open(`https://wa.me/+9${phone}/?text=https://www.google.com/maps/search/${coords.latitude},${coords.longitude}`)
             }
 
         });
