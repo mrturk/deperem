@@ -31,10 +31,7 @@ const Acil = () => {
             if (transcript.toLocaleLowerCase().includes(element.toLocaleLowerCase())) {
                 window.location.href = `tel:112`
                 resetTranscript()
-            } if (transcript.toLocaleLowerCase().includes("konum")) {
-                window.location.href = `https://wa.me/+9${phone}/?text=https://www.google.com/maps/search/${coords.latitude},${coords.longitude}`;
             }
-
         });
     }, [transcript])
 
@@ -47,14 +44,10 @@ const Acil = () => {
     }, [helpFunction, transcript])
 
 
-    return !isGeolocationAvailable ? (
-        <div>Your browser does not support Geolocation</div>
-    ) : !isGeolocationEnabled ? (
-        <div>Geolocation is not enabled</div>
-    ) : coords ? (
+    return coords ? (
         <Stack gap="10px">
             <Stack>
-                        <Typography variant="h3">Konumumu Paylaş Diye Bağırın yada Acil Diye Bağırın</Typography>
+                <Typography variant="h3"> Acil Diye Bağırın</Typography>
             </Stack>
             <Stack>
                 <OutlinedInput type="number" value={phone} onChange={(e) => {
