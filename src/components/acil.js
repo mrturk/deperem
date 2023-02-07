@@ -32,7 +32,7 @@ const Acil = () => {
                 window.location.href = `tel:112`
                 resetTranscript()
             } if (transcript.toLocaleLowerCase().includes("konum")) {
-                window.location.href = `https://wa.me/?text=https://www.google.com/maps/search/${coords.latitude},${coords.longitude}`;
+                window.location.href = `https://wa.me/+9${phone}/?text=https://www.google.com/maps/search/${coords.latitude},${coords.longitude}`;
             }
 
         });
@@ -64,7 +64,7 @@ const Acil = () => {
 
             <Stack>
                 <Button variant="contained" onClick={() => {
-                            window.location.href = `https://wa.me/+9${phone}/?text=https://www.google.com/maps/search/${coords.latitude},${coords.longitude}`;
+                            window.open(`https://wa.me/+9${phone}/?text=https://www.google.com/maps/search/${coords.latitude},${coords.longitude}`)
                 }}>Konum Paylaş</Button>
             </Stack>
             <Stack gap="10px">
